@@ -21,15 +21,25 @@ namespace CorEscuela.Entidades
 
         public TiposEscuela TipoEscuela { get; set; }
 
+
         // Implementación corta del Constructor haciendo uso de la 'Igualación por Tuplas'
         // que es una caraterística de Lengs. Funcionales
         public Escuela(string nombre, int año) => (Nombre, AñoDeCreación) = (nombre, año);
+
+        public Escuela(string nombre, int año, TiposEscuela tipos, string pais="", string ciudad = "") 
+        {
+            (Nombre, AñoDeCreación) = (nombre, año);
+            TipoEscuela = tipos;
+            Pais = pais;
+            Ciudad = ciudad;
+        }
+
 
         // A fin de que al momento de imprimir el obj se impriman sus propiedades, se
         // sobreescribe el método ToString que comparten todos los objs en C#
         public override string ToString()
         {
-            return $"Nombre: {Nombre}, Tipo: {TipoEscuela} \nFundación: {AñoDeCreación}\nPaís: {Pais}, Ciudad: {Ciudad}";
+            return $"Nombre: \"{Nombre}\", Tipo: {TipoEscuela} \nFundación: {AñoDeCreación}{System.Environment.NewLine}País: {Pais}, Ciudad: {Ciudad}";
         }
     }
 }
