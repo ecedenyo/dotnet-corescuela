@@ -1,4 +1,5 @@
 ﻿using System;
+using CorEscuela.Entidades;
 
 namespace etapa1
 {
@@ -6,7 +7,11 @@ namespace etapa1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var escuela = new Escuela("Platzi Academy", 2019);
+            escuela.Pais = "Panamá";
+            escuela.Ciudad = "Panamá";
+
+            Console.WriteLine("Hello World, " + escuela.Nombre + "!");
         }
     }
 }
