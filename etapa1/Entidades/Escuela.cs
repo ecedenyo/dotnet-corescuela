@@ -19,15 +19,17 @@ namespace CorEscuela.Entidades
 
         public string Ciudad { get; set; }
 
-        /*public Escuela(string nombre, int año)
-        {
-            // El uso de 'this' es únicamente para diferenciar entre nombs. de vars
-            this.nombre = nombre;
-            AñoDeCreación = año;
-        }*/
+        public TiposEscuela TipoEscuela { get; set; }
 
         // Implementación corta del Constructor haciendo uso de la 'Igualación por Tuplas'
         // que es una caraterística de Lengs. Funcionales
         public Escuela(string nombre, int año) => (Nombre, AñoDeCreación) = (nombre, año);
+
+        // A fin de que al momento de imprimir el obj se impriman sus propiedades, se
+        // sobreescribe el método ToString que comparten todos los objs en C#
+        public override string ToString()
+        {
+            return $"Nombre: {Nombre}, Tipo: {TipoEscuela} \nFundación: {AñoDeCreación}\nPaís: {Pais}, Ciudad: {Ciudad}";
+        }
     }
 }

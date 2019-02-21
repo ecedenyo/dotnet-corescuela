@@ -10,8 +10,9 @@ namespace etapa1
             var escuela = new Escuela("Platzi Academy", 2019);
             escuela.Pais = "Panamá";
             escuela.Ciudad = "Panamá";
+            escuela.TipoEscuela = TiposEscuela.Primaria;
 
-            Console.WriteLine("Hello World, " + escuela.Nombre + "!");
+            Console.WriteLine(escuela);
         }
     }
 }
